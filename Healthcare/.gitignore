@@ -1,0 +1,9 @@
+/target/
+**/target/*
+*.html
+*.log
+/.classpath
+/.project
+*.png
+*.gif
+*.xml

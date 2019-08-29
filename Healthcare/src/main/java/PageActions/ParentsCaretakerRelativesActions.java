@@ -1,0 +1,35 @@
+package PageActions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import commonmethods.ActionSelenium;
+
+public class ParentsCaretakerRelativesActions {
+	static WebDriver driver;
+
+	public ParentsCaretakerRelativesActions(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public static void verifyPageTitle(String text) {
+		ActionSelenium.waitUtilAtNextPage(text, driver);
+	}
+
+	public static void clickSave() {
+		ActionSelenium.click(driver, By.xpath("//*[text()='Save & continue']"));
+	}
+
+	public static void selectDependent(String text) {
+		switch (text) {
+		case "No":
+			ActionSelenium.waitForPageLoad(driver);
+			ActionSelenium.click(driver, By.xpath("//*[@value='none']"));
+			break;
+
+		default:
+			break;
+		}
+	}
+
+}
